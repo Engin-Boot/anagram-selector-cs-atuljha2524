@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq
 
 namespace Anagram
 {
@@ -11,7 +12,7 @@ namespace Anagram
             char [] charArray2 = word2.ToCharArray();
             Array.Sort(charArray1);
             Array.Sort(charArray2);
-            return charArray1.Equals(charArray2);
+            return Enumerable.SequenceEqual(charArray1, charArray2);
         }
         public List<string> SelectAnagrams(string word, List<string> candidates) {
             //Insert the correct implementation here
